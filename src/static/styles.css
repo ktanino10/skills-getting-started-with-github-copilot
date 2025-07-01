@@ -58,16 +58,25 @@ section h3 {
 }
 
 .activity-card {
-  margin-bottom: 15px;
-  padding: 15px;
+  margin-bottom: 20px;
+  padding: 18px;
   border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #f9f9f9;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ffffff 0%, #fafbff 100%);
+  box-shadow: 0 4px 12px rgba(26, 35, 126, 0.08);
+  transition: all 0.3s ease;
+}
+
+.activity-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(26, 35, 126, 0.12);
 }
 
 .activity-card h4 {
-  margin-bottom: 10px;
-  color: #0066cc;
+  margin-bottom: 12px;
+  color: #1a237e;
+  font-size: 1.3em;
+  font-weight: bold;
 }
 
 .activity-card p {
@@ -141,4 +150,76 @@ footer {
   margin-top: 30px;
   padding: 20px;
   color: #666;
+}
+
+.participants-section {
+  margin-top: 15px;
+  padding: 12px 15px;
+  background: linear-gradient(135deg, #f8f9ff 0%, #eef3fb 100%);
+  border-radius: 8px;
+  border: 1px solid #c5cae9;
+  box-shadow: 0 2px 4px rgba(57, 73, 171, 0.08);
+}
+
+.participants-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.participants-icon {
+  font-size: 1.2em;
+  margin-right: 8px;
+}
+
+.participants-section h5 {
+  margin: 0;
+  color: #3949ab;
+  font-size: 1.05em;
+  font-weight: bold;
+}
+
+.participants-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.participants-list li {
+  background: #ffffff;
+  border: 1px solid #c5cae9;
+  border-radius: 12px;
+  padding: 4px 10px;
+  font-size: 0.9em;
+  box-shadow: 0 1px 2px rgba(57, 73, 171, 0.1);
+  transition: all 0.2s ease;
+}
+
+.participants-list li:hover {
+  background: #3949ab;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(57, 73, 171, 0.2);
+}
+
+.participant-name {
+  font-weight: 500;
+}
+
+.no-participants {
+  color: #757575;
+  font-style: italic;
+  font-size: 0.95em;
+  margin: 0;
+  text-align: center;
+  padding: 8px;
+  background: #f5f5f5;
+  border-radius: 6px;
+}
+
+.empty-icon {
+  margin-right: 6px;
 }

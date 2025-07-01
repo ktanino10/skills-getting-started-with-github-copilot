@@ -27,6 +27,39 @@ document.addEventListener("DOMContentLoaded", () => {
           <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
         `;
 
+        // --- Participants section start ---
+        const participantsSection = document.createElement("div");
+        participantsSection.className = "participants-section";
+        
+        const participantsHeader = document.createElement("div");
+        participantsHeader.className = "participants-header";
+        participantsHeader.innerHTML = `
+          <span class="participants-icon">👥</span>
+          <h5>Current Participants (${details.participants.length}/${details.max_participants})</h5>
+        `;
+        participantsSection.appendChild(participantsHeader);
+
+        if (details.participants && details.participants.length > 0) {
+          const ul = document.createElement("ul");
+          ul.className = "participants-list";
+          details.participants.forEach((email) => {
+            const li = document.createElement("li");
+            // Extract name from email (before @ symbol)
+            const name = email.split('@')[0].replace(/\./g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+            li.innerHTML = `<span class="participant-name">${name}</span>`;
+            ul.appendChild(li);
+          });
+          participantsSection.appendChild(ul);
+        } else {
+          const noParticipants = document.createElement("p");
+          noParticipants.className = "no-participants";
+          noParticipants.innerHTML = `<span class="empty-icon">📋</span> No participants yet - be the first to join!`;
+          participantsSection.appendChild(noParticipants);
+        }
+
+        activityCard.appendChild(participantsSection);
+        // --- Participants section end ---
+
         activitiesList.appendChild(activityCard);
 
         // Add option to select dropdown
